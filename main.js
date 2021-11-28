@@ -1,10 +1,10 @@
 /*
- * Project:
+ * Project: Instagram-like photo app
  * File Name: main.js
- * Description:
+ * Description:This application can extract the zip file and apply filters to these photos.
  *
- * Created Date:
- * Author:
+ * Created Date:November, 2021
+ * Author: Gokce Gokmen
  *
  */
 
