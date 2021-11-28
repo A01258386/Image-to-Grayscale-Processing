@@ -33,9 +33,29 @@ const unzip = (pathIn, pathOut) => {
 };
 unzip('myfile.zip', './unzipped')
 
+//create a function an array of file paths for all the png files
+const readDir = (dir) => {
+  return new Promise((resolve, reject) => {
+    fs.readdir(dir, (err, files) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(files);
+        let arr = [];
+        files.forEach((file) => {
+          if (path.extname(file) === ".png") {
+            arr.push(path.join(dir, file));            
+          }          
+        });
+        console.log(arr);
+      }
+    });
+  });
+};
 
-//The unzipping operation should create a directory called unzipped with all your images in it.
-//if unzip successfu, 
+readDir("./unzipped")
+
+
 
 
 /**
@@ -44,7 +64,7 @@ unzip('myfile.zip', './unzipped')
  * @param {string} path
  * @return {promise}
  */
-const readDir = (dir) => {};
+
 
 /**
  * Description: Read in png file by given pathIn,
